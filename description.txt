@@ -1,0 +1,1 @@
+only Max cell value on forecast graph
