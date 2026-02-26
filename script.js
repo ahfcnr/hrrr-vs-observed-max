@@ -223,6 +223,8 @@ function updatePlot() {
         ...sharedLayout,
         title: `Observed Rainfall – ${region}`
     });
+    const imgElement = document.getElementById("regionPhoto");
+    const titleElement = document.getElementById("imageTitle");
     if (regionImages[region]) {
         imgElement.src = regionImages[region];
         imgElement.style.display = "block";
@@ -233,4 +235,5 @@ function updatePlot() {
     }
 
 }
+
 
