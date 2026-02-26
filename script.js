@@ -2,6 +2,18 @@ let forecastData = [];
 let observedData = {};
 
 const dateBase = "2025-07-14";
+const regionImages = {
+    "Dover": "images/Dover.png",
+    "Englewood": "images/Englewood.png",
+    "Irvington": "images/Irvington.png",
+    "Leonia": "images/Leonia.png",
+    "Paterson": "images/Paterson.png",
+    "Plainfield": "images/Plainfield.png",
+    "Rahway": "images/Rahway.png",
+    "Scotch Plains": "images/Scotch Plains.png",
+    "Totowa": "images/Totowa.png",
+    "Woodland Park": "images/Woodland Park.png"
+};
 
 // ===============================
 // LOAD DATA
@@ -211,5 +223,14 @@ function updatePlot() {
         ...sharedLayout,
         title: `Observed Rainfall – ${region}`
     });
+    if (regionImages[region]) {
+        imgElement.src = regionImages[region];
+        imgElement.style.display = "block";
+        titleElement.innerText = `Site Map: ${region}`;
+    } else {
+        imgElement.style.display = "none";
+        titleElement.innerText = "";
+    }
 
 }
+
